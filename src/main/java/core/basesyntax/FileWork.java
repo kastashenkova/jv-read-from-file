@@ -19,10 +19,9 @@ public class FileWork {
         String[] arr = text.split("\\W+");
         String[] res = {};
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i].toLowerCase().compareTo(arr[i - 1].toLowerCase()) < 0) {
-                res = Arrays.copyOf(res, res.length + 2);
-                res[res.length - 2] = arr[i].toLowerCase();
-                res[res.length - 1] = arr[i - 1].toLowerCase();
+            if (arr[i].startsWith("w")) {
+                res = Arrays.copyOf(res, res.length + 1);
+                res[res.length - 1] = arr[i].toLowerCase();
             }
         }
         Arrays.sort(res);
