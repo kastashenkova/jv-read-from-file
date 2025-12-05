@@ -25,10 +25,10 @@ public class FileWork {
         }
         String[] arr = text.toString().split("\\W+");
         String[] res = {};
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i].startsWith("w")) {
+        for (String s : arr) {
+            if (s.startsWith("w") || s.startsWith("W")) {
                 res = Arrays.copyOf(res, res.length + 1);
-                res[res.length - 1] = arr[i].toLowerCase();
+                res[res.length - 1] = s.toLowerCase();
             }
         }
         Arrays.sort(res);
