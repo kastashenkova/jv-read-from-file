@@ -10,11 +10,9 @@ public class FileWork {
     public String[] readFromFile(String fileName) throws FileNotFoundException {
         String text;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
-            try {
-                text = bufferedReader.readLine();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            text = bufferedReader.readLine();
+        } catch (FileNotFoundException e) {
+            throw e;  // пробрасываем FileNotFoundException дальше
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
