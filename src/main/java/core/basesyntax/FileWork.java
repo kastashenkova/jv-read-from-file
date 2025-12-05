@@ -21,9 +21,9 @@ public class FileWork {
         String[] res = {};
         for (int i = 1; i < arr.length; i++) {
             if (arr[i].toLowerCase().compareTo(arr[i - 1].toLowerCase()) < 0) {
-                    res = Arrays.copyOf(res, res.length + 2);
-                    res[res.length - 2] = arr[i].toLowerCase();
-                    res[res.length - 1] = arr[i - 1].toLowerCase();
+                res = Arrays.copyOf(res, res.length + 2);
+                res[res.length - 2] = arr[i].toLowerCase();
+                res[res.length - 1] = arr[i - 1].toLowerCase();
             }
         }
         Arrays.sort(res);
