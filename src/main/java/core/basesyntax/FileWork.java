@@ -20,7 +20,7 @@ public class FileWork {
             throw new RuntimeException(e);
         }
 
-        if (text.length() == 0) {
+        if (text.isEmpty()) {
             return new String[0];
         }
         String[] arr = text.toString().split("\\W+");
