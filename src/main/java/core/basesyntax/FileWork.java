@@ -8,21 +8,15 @@ import java.util.Arrays;
 
 public class FileWork {
     public String[] readFromFile(String fileName) throws FileNotFoundException {
-        StringBuilder text = new StringBuilder();
+        String text;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                text.append(line).append(" ");
-            }
+            text = bufferedReader.readLine();
         } catch (FileNotFoundException e) {
             throw e;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (text.isEmpty()) {
-            return new String[0];
-        }
-        String[] arr = text.toString().split("\\W+");
+        String[] arr = text.split("\\W+");
         String[] res = {};
         for (int i = 1; i < arr.length; i++) {
             if (arr[i].toLowerCase().compareTo(arr[i - 1].toLowerCase()) < 0) {
