@@ -12,7 +12,7 @@ public class FileWork {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
             text = bufferedReader.readLine();
         } catch (FileNotFoundException e) {
-            throw e;  // пробрасываем FileNotFoundException дальше
+            throw e;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
